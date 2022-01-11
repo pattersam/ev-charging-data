@@ -20,14 +20,14 @@ class Site(str, Enum):
     office001 = "office001"
 
 
-def etl(site: Site, start_time: str = START_TIME, end_time: str = END_TIME):
-    log.info(f"Getting {site} data from {start_time} to {end_time}.")
+def etl(site: Site, start: str = START_TIME, end: str = END_TIME):
+    log.info(f"Getting {site} data from {start} to {end}.")
     client = DataClient(ACN_DATA_API_TOKEN, ACN_DATA_API_URL)
 
     res = client.get_sessions_by_time(
         site,
-        start=datetime.datetime.fromisoformat(START_TIME),
-        end=datetime.datetime.fromisoformat(END_TIME),
+        start=datetime.datetime.fromisoformat(start),
+        end=datetime.datetime.fromisoformat(end),
     )
 
     data = list(res)

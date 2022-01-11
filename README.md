@@ -19,7 +19,7 @@ The `evcd` is installed for running the ELT to populate a databse.
 For example, to get the data for May 2019 from the `caltech` site, run:
 
 ```bash
-evcd caltech --start-time=2019-05-01T00:00:00+00:00 --end-time=2019-06-01T00:00:00+00:00
+evcd caltech --start=2019-05-01T00:00:00+00:00 --end=2019-06-01T00:00:00+00:00
 ```
 
 Run `evcd --help` for more information on it's use.
